@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS --> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        .user_edit_icon{
+            background-color: rgb(255, 255, 255);
+            padding: 7px 8px;
+            margin-left: 5px;
+            box-shadow: 0px 0px 5px 1px rgba(255, 206, 206, 0.75);
+        }
+        .input_field{
+            margin: 0 5px;
+
+        }
+        .Form_Control{
+            background-color: rgb(255, 254, 254);
+            box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+            margin-top: 30px;
+            padding: 20px;
+
+        }
+    </style>
+
+    <title>Crud Application</title>
+  </head>
+  <body>
+    <%- include('templates/_navbar') %>
+    <main class="container mt-5">
+        
+        <div class="row">
+            <div class="col-md-8 col-12 mx-auto">
+                <a href="/"><button  class="btn btn-outline-success"><i class="fas fa-angle-double-left mr-1"></i>View Users</button></a>
+                <div class="container Form_Control">
+                    <div class="heading text-center">
+                     <h4>Update User</h4>
+                     <span>Use the below form to update an Account </span>
+                    </div>
+                    <form method="POST" id="update_user">
+                        <div class="row">
+                            <div class="col-md-10 mx-auto">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="Name">Name</label>
+                                            <input type="hidden" class="form-control" name="_id" value="<%=user._id%>"> 
+                                            <input type="text" class="form-control" name="Name" value="<%=user.name%>"> 
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" name="email" value="<%=user.Email%>">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="gender">Gender</label>
+                                            <input type="radio"  name="gender" class="input_field ml-5" value="Male" <%= user.Gender == 'Male'?'checked':''%>>
+                                            <span>Male</span>
+                                            <input type="radio"  name="gender" class="input_field ml-4" value="Female" <%= user.Gender == 'Female'?'checked':''%>>
+                                            <span>Female</span>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="status">Status</label>
+                                            <input type="radio"  name="status" class="input_field" style="margin-left: 56px;" value="Active" <%= user.status== 'Active'?'checked':''%>>
+                                            <span>Active</span>
+                                            <input type="radio"  name="status" class="input_field" style="margin-left: 16px;" value="not active" <%= user.status == 'not active'?'checked':''%>>
+                                            <span>Not Active</span>
+                                          </div>
+                                          <div class="form-group mt-3">
+                                            <input type="submit" class="btn btn-outline-success px-5" value="Update">
+                                          </div>
+                                </div>
+                            </div>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script> -->
+  </body>
+</html>

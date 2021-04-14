@@ -1,0 +1,34 @@
+<form action="/api_user" method="POST" id="add_user">
+  <div class="row">
+      <div class="col-md-10 mx-auto">
+          <div class="row">
+              <div class="col-12">
+                  <div class="form-group">
+                      <label for="Name">Name</label>
+                      <input type="text" class="form-control" name="Name">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="gender">Gender</label>
+                      <input type="radio"  name="gender" class="input_field ml-5" value="Male">
+                      <span>Male</span>
+                      <input type="radio"  name="gender" class="input_field ml-4" value="Female">
+                      <span>Female</span>
+                    </div>
+                    <div class="form-group">
+                      <label for="status">Status</label>
+                      <input type="radio"  name="status" class="input_field" style="margin-left: 56px;" value="active">
+                      <span>Active</span>
+                      <input type="radio"  name="status" class="input_field" style="margin-left: 16px;" value="not active">
+                      <span>Not Active</span>
+                    </div>
+                    <div class="form-group mt-3">
+                      <input type="submit" class="btn btn-outline-success px-5" value="Save">
+                    </div>
+          </div>
+      </div>
+  </div>
+</form>
